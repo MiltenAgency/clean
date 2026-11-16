@@ -1,0 +1,25 @@
+/* Scroll progress deals each panel out from behind the foreground image. */
+.smart.process-scene{position:relative;isolation:isolate;height:240svh;min-height:0;padding:0;background:var(--surface);scroll-margin-top:0}
+.process-pin{position:sticky;top:0;width:100%;height:100svh;isolation:isolate}
+.process-main{position:absolute;z-index:3;left:50%;top:50%;width:min(350px,calc((100svh - 192px) * 354 / 646));aspect-ratio:354/646;padding:0;border:0;border-radius:32px;background:white;overflow:hidden;transform:translate(-50%,-50%);box-shadow:0 24px 64px #111fa21c}
+.process-main>img{display:block;width:100%;height:100%;object-fit:cover}
+.process-main:hover{opacity:1;transform:translate(-50%,-50%) scale(1.015)}
+.process-main:active{transform:translate(-50%,-50%) scale(.99)}
+.process-bar{position:absolute;z-index:1;left:50%;top:50%;width:clamp(216px,20vw,288px);min-height:104px;display:flex;align-items:center;gap:16px;padding:24px;border-radius:16px;background:white;color:var(--indigo);box-shadow:0 12px 40px #111fa20a;opacity:0;transform:translate(-50%,-50%) scale(.8);will-change:transform,opacity}
+.process-bar-icon{display:grid;place-items:center;flex-shrink:0;width:40px;height:40px;border-radius:12px;background:var(--cyan);color:var(--indigo)}
+.process-bar:nth-of-type(2) .process-bar-icon{background:var(--yellow)}
+.process-bar:nth-of-type(3) .process-bar-icon{background:var(--indigo);color:var(--yellow)}
+.process-bar:nth-of-type(4) .process-bar-icon{background:var(--blue);color:white}
+.process-bar h3{font-size:20px;line-height:28px;font-weight:600;letter-spacing:-.035em}
+.process-bar p{font-size:14px;line-height:20px;letter-spacing:-.02em;color:#53628a;margin-top:4px}
+.process-mini-photos{display:flex;align-items:center;margin-top:12px;padding-left:8px}
+.process-mini-photos img{width:24px;height:24px;object-fit:cover;border:2px solid white;border-radius:9999px;margin-left:-8px}
+.process-sr-only{position:absolute;width:1px;height:1px;overflow:hidden;clip-path:inset(50%);white-space:nowrap}
+@media(max-width:900px){
+ .process-main{top:36%;width:min(208px,calc(40svh * 354 / 646));border-radius:24px}
+ .process-bar{top:36%;width:min(216px,calc((100% - 64px) / 2));min-height:80px;padding:12px;gap:8px;border-radius:12px;align-items:center;text-align:left}
+ .process-bar-icon{display:none}.process-mini-photos{display:none}
+ .process-bar h3{font-size:14px;line-height:20px;letter-spacing:-.02em}
+ .process-bar p{font-size:12px;line-height:16px}
+}
+@media(prefers-reduced-motion:reduce){.smart.process-scene{height:100svh}.process-pin{position:relative}.process-bar{will-change:auto}.process-main:hover,.process-main:active{transform:translate(-50%,-50%)}}

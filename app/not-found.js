@@ -1,0 +1,1 @@
+export default function NotFound(){return <main className="not-found"><h1>A little off track?</h1><p>Let’s get you back to a brighter space with Clear &amp; Gleam.</p><a href="/">Return home ↗</a></main>}

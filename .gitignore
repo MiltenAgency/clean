@@ -1,0 +1,34 @@
+# Dependencies and build output
+node_modules/
+.next/
+out/
+dist/
+build/
+coverage/
+.vercel/
+*.tsbuildinfo
+
+# Environment files and private credentials
+.env
+.env.*
+!.env.example
+*.pem
+*.key
+*.p12
+*.pfx
+
+# Logs and local caches
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+.pnpm-debug.log*
+.cache/
+.DS_Store
+Thumbs.db
+
+# Local assistant configuration and review screenshots
+.agents/
+.codex/
+.aws/
+/qa/
